@@ -1,3 +1,4 @@
+#include 'pins.h'
 // Pin de conxión a los motores
 int pin_motor_izq = 11;
 int pin_motor_der = 10;

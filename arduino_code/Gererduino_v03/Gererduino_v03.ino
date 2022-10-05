@@ -8,10 +8,10 @@ uint16_t sensorValues[SensorCount];
 int pin_motor_izq = 11;
 int pin_motor_der = 10;
 
-#define KD  5  // Constante derivativa PID
+#define KD  0.01  // Constante derivativa PID
 #define KP  0.1  // Constante proporcional PID
-#define M   50 // Velocidad base de los motores
-
+#define base_speed   100 // Velocidad base de los motores
+#define max_speed 150 // Velocidad máxima de los motores
 template <typename T>
 Print& operator<<(Print& printer, T value){
   printer.print(value);
@@ -32,13 +32,17 @@ void setup()
   delay(500);
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, HIGH); // turn on Arduino's LED to indicate we are in calibration mode
-
+  Serial.begin(9600);
+  
+  // analogWrite(pin_motor_izq,100);
+  // analogWrite(pin_motor_der,0);
+  Serial.println("Calibrando");
   for (uint16_t i = 0; i < 400; i++){
     qtr.calibrate();
   }
   digitalWrite(LED_BUILTIN, LOW); // turn off Arduino's LED to indicate we are through with calibration
 
-  Serial.begin(9600);
+  
   for (uint8_t i = 0; i < SensorCount; i++)
   {
     Serial.print(qtr.calibrationOn.minimum[i]);
@@ -55,7 +59,6 @@ void setup()
   Serial.println();
   delay(1000);
 }
-
 void loop() {
   // Generamos la referencia
   int lastError = 0;
@@ -75,8 +78,8 @@ void loop() {
  
   // M1 and M2 = M are base motor speeds. 
   // Start with small values for M1 and M2.
-  int m_izq_speed = M + motorSpeed;
-  int m_der_speed = M - motorSpeed;
+  int m_izq_speed = base_speed + motorSpeed;
+  int m_der_speed = base_speed - motorSpeed;
  
   // it might help to keep the speeds positive (this is optional)
   // note that you might want to add a similiar line to keep the speeds from exceeding
@@ -85,6 +88,12 @@ void loop() {
     m_izq_speed = 0;
   if (m_der_speed < 0)
     m_der_speed = 0;
+    
+  // Clipping de la velocidad
+   if (max_speed < m_izq_speed)
+    m_izq_speed = max_speed;
+  if (max_speed < m_der_speed)
+    m_der_speed = max_speed;
  
   // set motor speeds using the two motor speed variables above
   analogWrite(pin_motor_izq,m_izq_speed);
