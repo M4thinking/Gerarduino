@@ -9,7 +9,7 @@ int pin_motor_izq = 11;
 int pin_motor_der = 10;
 
 #define KD 2  // Constante derivativa PID
-#define KP 0.05  // Constante proporcional PID
+#define KP 0.01  // Constante proporcional PID
 #define base_speed 100 // Velocidad base de los motores
 #define max_speed 150 // Velocidad máxima de los motores
 template <typename T>
@@ -119,4 +119,5 @@ void loop() {
   //  Serial.print('\t');
   //}
   //Serial.println(position);
+  delay(5);
 }
