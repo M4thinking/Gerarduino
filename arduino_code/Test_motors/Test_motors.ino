@@ -18,12 +18,7 @@ void setup() {
   pinMode(s_der_1, OUTPUT);
   pinMode(s_der_2, OUTPUT);
 
-  pinMode(13, OUTPUT);
-
-  digitalWrite(s_izq_1,HIGH);
-  digitalWrite(s_izq_2,LOW);
-  digitalWrite(s_der_1,HIGH);
-  digitalWrite(s_der_2,LOW);
+  
 }
 
 void loop() {
@@ -31,8 +26,13 @@ void loop() {
   
   // Inciamos el baile
 
+  digitalWrite(s_izq_1,HIGH);
+  digitalWrite(s_izq_2,LOW);
+  digitalWrite(s_der_1,HIGH);
+  digitalWrite(s_der_2,LOW);
   digitalWrite(13,HIGH);
-  analogWrite(pin_motor_izquierdo,150);
+  
+  analogWrite(pin_motor_izquierdo,250);
   delay(5000);
   analogWrite(pin_motor_izquierdo,0);
   
@@ -40,6 +40,25 @@ void loop() {
   analogWrite(pin_motor_derecho,150);
   delay(5000);
   analogWrite(pin_motor_derecho,0);
+
+  digitalWrite(s_izq_1,LOW);
+  digitalWrite(s_izq_2,HIGH);
+  digitalWrite(s_der_1,LOW);
+  digitalWrite(s_der_2,HIGH);
+
+  digitalWrite(13,HIGH);
+  analogWrite(pin_motor_izquierdo,250);
+  delay(5000);
+  analogWrite(pin_motor_izquierdo,0);
+  
+  digitalWrite(13,LOW);
+  analogWrite(pin_motor_derecho,150);
+  delay(5000);
+  analogWrite(pin_motor_derecho,0);
+
+  
+
+  
   
   
  

@@ -1,4 +1,4 @@
-int pin_derecho = 3;
+int pin_derecho = 6;
 
 void setup() {
   // put your setup code here, to run once:

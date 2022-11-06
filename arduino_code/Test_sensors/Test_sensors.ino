@@ -41,10 +41,10 @@ void loop() {
     Serial.print(sensorValues[i]);
     Serial.print('\t');
   }
-
-  Serial.print(der);
-  Serial.print('\t');
+  Serial.print("\t");
   Serial.print(izq);
+  Serial.print('\t');
+  Serial.print(der);
   Serial.print('\n');
-  delay(2000);
+  delay(100);
 }
