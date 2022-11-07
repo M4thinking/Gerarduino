@@ -32,7 +32,7 @@ void loop() {
   digitalWrite(s_der_2,LOW);
   digitalWrite(13,HIGH);
   
-  analogWrite(pin_motor_izquierdo,250);
+  analogWrite(pin_motor_izquierdo,150);
   delay(5000);
   analogWrite(pin_motor_izquierdo,0);
   
@@ -47,7 +47,7 @@ void loop() {
   digitalWrite(s_der_2,HIGH);
 
   digitalWrite(13,HIGH);
-  analogWrite(pin_motor_izquierdo,250);
+  analogWrite(pin_motor_izquierdo,150);
   delay(5000);
   analogWrite(pin_motor_izquierdo,0);
   
