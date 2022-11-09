@@ -21,7 +21,7 @@ void setup() {
   pinMode(sensor_der, INPUT);
 
   Serial.println("Calibrando...");
-  for (uint16_t i = 0; i < 100; i++){
+  for (uint16_t i   = 0; i < 100; i++){
     qtr.calibrate();
     }
   
