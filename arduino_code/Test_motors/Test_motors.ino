@@ -7,7 +7,7 @@ int s_izq_2 = 10;
 int s_der_1 = 4;
 int s_der_2 = 5;
 
-int vel = 100;
+int vel = 125;
 
 void setup() {
   // put your setup code here, to run once:
@@ -35,28 +35,28 @@ void loop() {
   digitalWrite(13,HIGH);
   
   analogWrite(pin_motor_izquierdo,vel);
-  delay(5000);
-  analogWrite(pin_motor_izquierdo,0);
-  
-  digitalWrite(13,LOW);
+  //delay(5000);
   analogWrite(pin_motor_derecho,vel);
-  delay(5000);
-  analogWrite(pin_motor_derecho,0);
-
-  digitalWrite(s_izq_1,LOW);
-  digitalWrite(s_izq_2,HIGH);
-  digitalWrite(s_der_1,LOW);
-  digitalWrite(s_der_2,HIGH);
-
-  digitalWrite(13,HIGH);
-  analogWrite(pin_motor_izquierdo,vel);
-  delay(5000);
-  analogWrite(pin_motor_izquierdo,0);
-  
-  digitalWrite(13,LOW);
-  analogWrite(pin_motor_derecho,vel);
-  delay(5000);
-  analogWrite(pin_motor_derecho,0);
+//  
+//  digitalWrite(13,LOW);
+//  analogWrite(pin_motor_derecho,vel);
+//  delay(5000);
+//  analogWrite(pin_motor_derecho,0);
+//
+//  digitalWrite(s_izq_1,LOW);
+//  digitalWrite(s_izq_2,HIGH);
+//  digitalWrite(s_der_1,LOW);
+//  digitalWrite(s_der_2,HIGH);
+//
+//  digitalWrite(13,HIGH);
+//  analogWrite(pin_motor_izquierdo,vel);
+//  delay(5000);
+//  analogWrite(pin_motor_izquierdo,0);
+//  
+//  digitalWrite(13,LOW);
+//  analogWrite(pin_motor_derecho,vel);
+//  delay(5000);
+//  analogWrite(pin_motor_derecho,0);
 
   
 

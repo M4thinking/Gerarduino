@@ -1,7 +1,7 @@
 #include <QTRSensors.h>
 QTRSensors qtr;
 
-int sensor_izq = 13, sensor_der = 7;
+int sensor_izq = 7, sensor_der = 9;
 int pos, der, izq;
 
 const uint8_t SensorCount = 8;
