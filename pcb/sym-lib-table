@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "8_ir_sensor")(type "KiCad")(uri "${KIPRJMOD}/8_ir_sensor.kicad_sym")(options "")(descr ""))
+  (lib (name "gerarduino")(type "KiCad")(uri "${KIPRJMOD}/gerarduino.kicad_sym")(options "")(descr ""))
+)
